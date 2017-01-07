@@ -2,6 +2,7 @@ var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var helpers = require('./helpers');
+require('core-js/es6/promise');
 
 module.exports = {
   entry: {
@@ -37,7 +38,7 @@ module.exports = {
         test: /\.css$/,
         include: helpers.root('src', 'app'),
         loader: 'raw'
-      },
+      }/*,
       {
         test: /\.scss$/,
         exclude: /node_modules/,
@@ -51,7 +52,7 @@ module.exports = {
           replace: '',
           flags: 'g'
         }
-      }
+      }*/
 
     ]
   },
